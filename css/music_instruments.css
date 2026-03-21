@@ -1,0 +1,520 @@
+/* 
+  Music Instruments - Premium Design System
+  Theme: Symphony (Deep Obsidian & Golden Accents)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+    --primary-gold: #D4AF37;
+    --primary-gold-muted: rgba(212, 175, 55, 0.6);
+    --bg-obsidian: #0A0A0B;
+    --bg-card: #161618;
+    --text-pure: #FFFFFF;
+    --text-muted: #A0A0A0;
+    --accent-glow: rgba(212, 175, 55, 0.2);
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-obsidian);
+    background-image: url('music_img/musical_texture.png');
+    background-attachment: fixed;
+    background-size: cover;
+    color: var(--text-pure);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+.serif {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Glassmorphism Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10, 10, 11, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #fff 0%, var(--primary-gold) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    color: var(--text-pure);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    opacity: 0.7;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+    color: var(--primary-gold);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+    background: linear-gradient(to right, rgba(10, 10, 11, 0.9), transparent),
+        url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&q=80&w=2070');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 700px;
+    z-index: 2;
+}
+
+.hero-tag {
+    color: var(--primary-gold);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    display: block;
+    animation: fadeInDown 1s ease forwards;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    animation: fadeInLeft 1.2s ease forwards;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    max-width: 500px;
+    animation: fadeInLeft 1.4s ease forwards;
+}
+
+.btn {
+    padding: 1rem 2.5rem;
+    background: var(--primary-gold);
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+/* Instrument Categories */
+.section {
+    padding: 8rem 10%;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 5rem;
+    padding: 3rem;
+    background: linear-gradient(rgba(10, 10, 11, 0.8), rgba(10, 10, 11, 0.8)), url('music_img/abstract_sound.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.section-header h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #fff 0%, var(--primary-gold) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.category-card {
+    background: var(--bg-card);
+    padding: 3rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: var(--transition);
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card:hover {
+    border-color: var(--primary-gold);
+    transform: translateY(-10px);
+}
+
+.category-card i {
+    font-size: 3rem;
+    color: var(--primary-gold);
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.category-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.category-card p {
+    color: var(--text-muted);
+}
+
+/* Featured Instrument Layout */
+.featured-instrument {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    background: #0f0f11;
+    border-radius: 20px;
+    padding: 4rem;
+    margin-top: 4rem;
+}
+
+.featured-img {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.featured-img img {
+    width: 100%;
+    display: block;
+    transition: var(--transition);
+}
+
+.featured-info {
+    flex: 1;
+}
+
+.featured-info h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Sound Lab Section */
+
+/* History Timeline */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2rem 0;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: var(--primary-gold-muted);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition);
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: var(--bg-obsidian);
+    border: 4px solid var(--primary-gold);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.right::after {
+    left: -10px;
+}
+
+.timeline-content {
+    padding: 2rem;
+    background: var(--bg-card);
+    position: relative;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.timeline-content h3 {
+    color: var(--primary-gold);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content span {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* Contact Form */
+.contact-container {
+    max-width: 800px;
+    margin: 4rem auto;
+    background: var(--bg-card);
+    padding: 4rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.form-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.2rem;
+    color: var(--text-pure);
+    border-radius: 8px;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-gold);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+textarea.form-input {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--primary-gold);
+    border: none;
+    color: black;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+/* Detail Profiles */
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    margin-top: 4rem;
+}
+
+.instrument-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.profile-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    filter: grayscale(40%);
+    transition: var(--transition);
+}
+
+.profile-img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+}
+
+.spec-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.spec-item {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+}
+
+.spec-item label {
+    display: block;
+    color: var(--primary-gold);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 968px) {
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero {
+        padding: 0 5%;
+    }
+
+    .featured-instrument {
+        flex-direction: column;
+        padding: 2rem;
+    }
+}
+
+/* New Consolidated Styles */
+.bg-deep {
+    background: #050505 !important;
+}
+
+.text-gold {
+    color: var(--primary-gold) !important;
+}
+
+.font-weight-600 {
+    font-weight: 600;
+}
+
+.spec-grid-featured {
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+
+footer.main-footer {
+    padding: 4rem 10%;
+    background: var(--bg-card);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.footer-logo {
+    margin-bottom: 2rem;
+}
+
+.footer-desc {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.footer-nav-links {
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.footer-copyright {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
